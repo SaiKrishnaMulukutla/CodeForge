@@ -917,7 +917,7 @@ def generate_with_groq(prompt, language):
                 "Content-Type": "application/json"
             }
             data = {
-                "model": "llama3-8b-8192",
+                "model": "meta-llama/llama-4-scout-17b-16e-instruct",
                 "messages": [{"role": "user", "content": full_prompt}]
             }
 
@@ -1273,7 +1273,7 @@ Speak in the selected language ({language_code}).
 User's Question: {user_input}
 Answer:"""
     response = client.chat.completions.create(
-        model="llama3-8b-8192",  # Replace with the appropriate Groq model
+        model="meta-llama/llama-4-scout-17b-16e-instruct",
         messages=[{"role": "user", "content": user_input}],
     )
     return response.choices[0].message.content.strip()
